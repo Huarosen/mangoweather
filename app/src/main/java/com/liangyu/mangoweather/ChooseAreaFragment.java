@@ -211,7 +211,7 @@ public class ChooseAreaFragment extends Fragment {
 
         showProgressDialog();
 
-        HttpUtil.sendHttpRequest(address, new Callback() {
+        HttpUtil.sendOkHttpRequest(address, new Callback() {
 
             @Override
             public void onFailure(Call call, IOException e) {
