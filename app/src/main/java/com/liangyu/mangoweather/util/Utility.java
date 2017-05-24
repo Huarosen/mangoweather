@@ -19,7 +19,7 @@ import org.json.JSONObject;
  */
 
 public class Utility {
-
+    private static final String TAG = "Utility";
     /**
      * 解析和处理服务器个返回的省级数据
      * **/
@@ -91,12 +91,12 @@ public class Utility {
     /**
      * 将返回的JSON数据解析为Weather实体类
      */
-    @Nullable
     public static Weather handleWeatherResponse(String response){
         try {
             JSONObject jsonObject = new JSONObject(response);
             JSONArray jsonArray = jsonObject.getJSONArray("HeWeather");
             String weatherContent = jsonArray.getJSONObject(0).toString();
+            Log.d(TAG, "handleWeatherResponse: "+weatherContent);
             return new Gson().fromJson(weatherContent, Weather.class);
         }catch (Exception e){
             e.printStackTrace();
