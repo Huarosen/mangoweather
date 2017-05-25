@@ -1,5 +1,6 @@
 package com.liangyu.mangoweather;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
@@ -22,6 +23,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.liangyu.mangoweather.gson.Forecast;
 import com.liangyu.mangoweather.gson.Weather;
+import com.liangyu.mangoweather.service.AutoUpdateService;
 import com.liangyu.mangoweather.util.HttpUtil;
 import com.liangyu.mangoweather.util.Utility;
 
@@ -155,8 +157,15 @@ public class WeatherActivity extends AppCompatActivity {
                             editor.putString("weather",responseText);
                             editor.apply();
                             showWeatherInfo(weather);
+
+                            //测试sharedpreference中的数据是否已经更新
+                            SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(WeatherActivity.this);
+                            String ccweather = pref.getString("weather",null);
+                            Log.d(TAG, "侧滑选择城市后,sharedpreferences中的数据: " + ccweather);
+
                         }else {
-                            Toast.makeText(WeatherActivity.this,"获取天气信息失败",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(WeatherActivity.this,"获取天气信息失败(OK)",Toast.LENGTH_SHORT).show();
+                            Log.d(TAG, "获取天气信息失败(OK)");
                         }
                         swipeRefresh.setRefreshing(false);
                     }
@@ -169,7 +178,8 @@ public class WeatherActivity extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(WeatherActivity.this,"获取天气信息失败",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(WeatherActivity.this,"获取天气信息失败(Fail)",Toast.LENGTH_SHORT).show();
+                        Log.d(TAG, "获取天气信息失败(Fail)");
                         swipeRefresh.setRefreshing(false);
                     }
                 });
@@ -242,5 +252,7 @@ public class WeatherActivity extends AppCompatActivity {
         carWashText.setText(carWash);
         sportText.setText(sport);
         weatherLayout.setVisibility(View.VISIBLE);
+        Intent intent = new Intent(this, AutoUpdateService.class);
+        startService(intent);
     }
 }
