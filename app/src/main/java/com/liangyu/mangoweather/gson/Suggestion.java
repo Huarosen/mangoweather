@@ -14,7 +14,20 @@ public class Suggestion {
     @SerializedName("cw")
     public CarWash carWash;
 
+    @SerializedName("drsg")
+    public DressSuggestion dressSuggestion;
+
+    @SerializedName("flu")
+    public FluInfo fluInfo;
+
+    @SerializedName("trav")
+    public Travel travel;
+
+    @SerializedName("uv")
+    public UltraViolet ultraViolet;
+
     public Sport sport;
+
 
     public class Comfort{
 
@@ -23,6 +36,30 @@ public class Suggestion {
     }
 
     public class CarWash{
+
+        @SerializedName("txt")
+        public String info;
+    }
+
+    public class DressSuggestion{
+
+        @SerializedName("txt")
+        public String info;
+    }
+
+    public class FluInfo{
+
+        @SerializedName("txt")
+        public String info;
+    }
+
+    public class Travel{
+
+        @SerializedName("txt")
+        public String info;
+    }
+
+    public class UltraViolet{
 
         @SerializedName("txt")
         public String info;

@@ -39,6 +39,8 @@
 
                     <include layout="@layout/forecast"/>
 
+                    <!--<include layout="@layout/forecast_hourly"/>-->
+
                     <include layout="@layout/aqi"/>
 
                     <include layout="@layout/suggestion"/>
