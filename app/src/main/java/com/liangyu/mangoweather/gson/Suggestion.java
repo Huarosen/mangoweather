@@ -31,11 +31,17 @@ public class Suggestion {
 
     public class Comfort{
 
+        @SerializedName("brf")
+        public String cont;
+
         @SerializedName("txt")
         public String info;
     }
 
     public class CarWash{
+
+        @SerializedName("brf")
+        public String cont;
 
         @SerializedName("txt")
         public String info;
@@ -43,11 +49,17 @@ public class Suggestion {
 
     public class DressSuggestion{
 
+        @SerializedName("brf")
+        public String cont;
+
         @SerializedName("txt")
         public String info;
     }
 
     public class FluInfo{
+
+        @SerializedName("brf")
+        public String cont;
 
         @SerializedName("txt")
         public String info;
@@ -55,17 +67,26 @@ public class Suggestion {
 
     public class Travel{
 
+        @SerializedName("brf")
+        public String cont;
+
         @SerializedName("txt")
         public String info;
     }
 
     public class UltraViolet{
 
+        @SerializedName("brf")
+        public String cont;
+
         @SerializedName("txt")
         public String info;
     }
 
     public class Sport{
+
+        @SerializedName("brf")
+        public String cont;
 
         @SerializedName("txt")
         public String info;

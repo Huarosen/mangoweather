@@ -278,13 +278,13 @@ public class WeatherActivity extends AppCompatActivity {
             aqiText.setText(weather.aqi.city.aqi);
             pm25Text.setText(weather.aqi.city.pm25);
         }
-        String comfort = "舒适度：" + weather.suggestion.comfort.info;
-        String carWash = "洗车指数：" + weather.suggestion.carWash.info;
-        String dress = "穿衣推荐：" + weather.suggestion.dressSuggestion.info;
-        String flu = "流感预防：" + weather.suggestion.fluInfo.info;
-        String travel = "旅行建议：" + weather.suggestion.travel.info;
-        String uv = "紫外线指数：" + weather.suggestion.ultraViolet.info;
-        String sport = "运动建议：" + weather.suggestion.sport.info;
+        String comfort = "舒适度：" + weather.suggestion.comfort.cont + "\n\t\t\t\t" +weather.suggestion.comfort.info;
+        String carWash = "洗车指数：" + weather.suggestion.carWash.cont + "\n\t\t\t\t" + weather.suggestion.carWash.info;
+        String dress = "穿衣推荐：" + weather.suggestion.dressSuggestion.cont + "\n\t\t\t\t" + weather.suggestion.dressSuggestion.info;
+        String flu = "流感预防：" + weather.suggestion.fluInfo.cont + "\n\t\t\t\t" + weather.suggestion.fluInfo.info;
+        String travel = "旅行建议：" + weather.suggestion.travel.cont + "\n\t\t\t\t" + weather.suggestion.travel.info;
+        String uv = "紫外线指数：" + weather.suggestion.ultraViolet.cont + "\n\t\t\t\t" + weather.suggestion.ultraViolet.info;
+        String sport = "运动建议：" + weather.suggestion.sport.cont + "\n\t\t\t\t" + weather.suggestion.sport.info;
 
         comfortText.setText(comfort);
         carWashText.setText(carWash);
